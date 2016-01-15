@@ -3,12 +3,14 @@ import ReactDOM from 'react-dom';
 
 import Header from './header.js';
 import Footer from './footer.js';
+import BlogList from './blogList.js';
 
 let Wrap = React.createClass({
   render: function() {
     return (
       <div id="wrap">
         <Header/>
+          <BlogList/>
         <Footer/>
       </div>
     );

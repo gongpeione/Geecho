@@ -62,6 +62,10 @@
 
 	var _footer2 = _interopRequireDefault(_footer);
 
+	var _blogList = __webpack_require__(161);
+
+	var _blogList2 = _interopRequireDefault(_blogList);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var Wrap = _react2.default.createClass({
@@ -72,6 +76,7 @@
 	      'div',
 	      { id: 'wrap' },
 	      _react2.default.createElement(_header2.default, null),
+	      _react2.default.createElement(_blogList2.default, null),
 	      _react2.default.createElement(_footer2.default, null)
 	    );
 	  }
@@ -19801,6 +19806,127 @@
 	  <Footer />,
 	  document.getElementById('app')
 	);*/
+
+/***/ },
+/* 161 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.BlogList = exports.Post = undefined;
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(158);
+
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Post = exports.Post = function (_React$Component) {
+		_inherits(Post, _React$Component);
+
+		function Post() {
+			_classCallCheck(this, Post);
+
+			return _possibleConstructorReturn(this, Object.getPrototypeOf(Post).apply(this, arguments));
+		}
+
+		_createClass(Post, [{
+			key: 'render',
+			value: function render() {
+				return _react2.default.createElement(
+					'article',
+					{ className: 'post' },
+					_react2.default.createElement(
+						'header',
+						null,
+						_react2.default.createElement(
+							'a',
+							{ href: '#' },
+							_react2.default.createElement(
+								'h2',
+								null,
+								'Lorem ipsum dolor sit.'
+							)
+						),
+						_react2.default.createElement(
+							'div',
+							{ className: 'meta' },
+							_react2.default.createElement(
+								'time',
+								{ date: '2016/1/16' },
+								'2016/1/16'
+							),
+							_react2.default.createElement(
+								'span',
+								{ className: 'comments' },
+								'10'
+							)
+						)
+					),
+					_react2.default.createElement(
+						'section',
+						{ className: 'content' },
+						_react2.default.createElement('img', { src: '../img/default.jpg', alt: 'Lorem ipsum dolor sit' }),
+						_react2.default.createElement(
+							'p',
+							null,
+							'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae, quidem, saepe. Totam, repellendus, impedit. Cupiditate saepe totam similique alias aliquam tenetur perspiciatis distinctio. Optio aliquam similique, est labore? Obcaecati, laboriosam!'
+						)
+					)
+				);
+			}
+		}]);
+
+		return Post;
+	}(_react2.default.Component);
+
+	var BlogList = exports.BlogList = function (_React$Component2) {
+		_inherits(BlogList, _React$Component2);
+
+		function BlogList() {
+			_classCallCheck(this, BlogList);
+
+			return _possibleConstructorReturn(this, Object.getPrototypeOf(BlogList).apply(this, arguments));
+		}
+
+		_createClass(BlogList, [{
+			key: 'render',
+			value: function render() {
+				return _react2.default.createElement(
+					'div',
+					{ id: 'blog-container' },
+					_react2.default.createElement(Post, null),
+					_react2.default.createElement(Post, null),
+					_react2.default.createElement(Post, null),
+					_react2.default.createElement(Post, null)
+				);
+			}
+		}]);
+
+		return BlogList;
+	}(_react2.default.Component);
+
+	/*ReactDOM.render(
+	  <Header/>,
+	  document.getElementById('app')
+	);*/
+
+	exports.default = BlogList;
 
 /***/ }
 /******/ ]);
