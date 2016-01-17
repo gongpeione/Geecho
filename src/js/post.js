@@ -2,13 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, IndexRoute, Link, hashHistory } from 'react-router'
 
-export class Footer extends React.Component {
+export class Post extends React.Component {
+
 	render() {
 		return (
-	      <footer id="footer">
-	        Copyright
-	      </footer>
-	    );
+			<div>{this.props.params.id}</div>
+		)
 	}
 }
-export default Footer;
+
+export default Post;

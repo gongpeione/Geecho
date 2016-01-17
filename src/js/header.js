@@ -12,9 +12,4 @@ export class Header extends React.Component {
 	}
 }
 
-/*ReactDOM.render(
-  <Header/>,
-  document.getElementById('app')
-);*/
-
 export default Header;

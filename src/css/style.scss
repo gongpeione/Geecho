@@ -1,5 +1,25 @@
 @import 'normalize.scss';
 
+$black : #444;
+$gray  : #ccc;
+
 body {
 	background: #fff;
+	color: $black;
+	overflow-x: hidden;
 }
+
+a {
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+#main-container {
+	transition: .3s all ease-in-out;
+}
+@import 'header.scss';
+@import 'menu.scss';
+@import 'blog.scss';

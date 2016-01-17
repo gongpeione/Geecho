@@ -53,7 +53,7 @@ gulp.task('clean', function() {
 
 // 默认任务 清空图片、样式、js并重建 运行语句 gulp
 gulp.task('default', ['clean'], function(){
-    gulp.start('html', 'css', 'images',' js');
+    gulp.start('html', 'css', 'images','js');
 });
 
 //监听
@@ -63,10 +63,10 @@ gulp.task('watch',function(){
     gulp.watch('./src/*.html', ['html']);
 
     // 监听css
-    gulp.watch('./src/css/style.scss', ['css']);
+    gulp.watch('./src/css/*.scss', ['css']);
 
     // 监听images
-    gulp.watch('./src/img/**/*', ['images']);
+    gulp.watch('./src/img/**/*.*', ['images']);
 
     // 监听js
     gulp.watch('./src/js/**/*.js', ['js']);

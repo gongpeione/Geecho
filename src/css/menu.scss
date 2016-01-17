@@ -1,0 +1,94 @@
+#menu {
+	position: fixed;
+	height: 100%;
+	background: $black;
+	width: 15rem;
+	transform: translateX(-15rem);
+	transition: .3s all ease-in-out;
+}
+.menu-button {
+	position: fixed;
+	top: 10px;
+	left: 20px;
+	padding: 10px 8px;
+	background: #fff;
+	border-radius: 5px;
+	cursor: pointer;
+	z-index: 1;
+	transition: .3s all ease-in-out;
+
+	.button-line {
+		width: 25px;
+		height: 3px;
+		background: $black;
+		margin-bottom: 4px;
+		border-radius: 2px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+#menu-slider {
+	display: none;
+
+	&:checked {
+		& ~ .menu-button {
+			background: $black;
+			transform: translateX(15rem);
+
+			.button-line {
+				background: #eee;
+			}
+			.circle {
+				border-color: #eee;
+			}
+			.stick {
+				background: #eee;
+			}
+		}
+		& ~ .search-button {
+			transform: translateX(15rem);
+		}
+		& ~ #menu {
+			transform: translateX(0rem);
+		}
+		& ~ #main-container
+		{
+			transform: translateX(15rem);
+		}
+	}
+}
+
+.search-button {
+	position: fixed;
+	top: 60px;
+	left: 20px;
+	min-width: 25px;
+    min-height: 21px;
+	padding: 8px 8px;
+	background: #fff;
+	border-radius: 5px;
+	cursor: pointer;
+	z-index: 1;
+	transition: .3s all ease-in-out;
+
+	.circle {
+		width: 11px;
+		height: 11px;
+		background: transparent;
+		border: 3px solid $black;
+		border-radius: 50%;
+	}
+
+	.stick {
+		width: 3px;
+		height: 13px;
+		transform: rotate(-45deg);
+		position: absolute;
+		right: 13px;
+		top: 20px;
+		background: $black;
+		border-radius: 0 2px 2px 0;
+	}
+}

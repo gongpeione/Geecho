@@ -1,0 +1,40 @@
+#blog-container {
+	
+	max-width: 40rem;
+	margin: 0 auto;
+
+	.post {
+
+		margin-bottom: 80px;
+		
+		header {
+			
+			margin-bottom: 30px;
+
+			a {
+				color: $black;
+				font-size: 1.6rem;
+			}
+			h2 {
+				margin-bottom: 5px;
+			}
+			.meta,
+			.meta a {
+				font-size: 1.2rem;
+				color: $gray;
+
+				.comments {
+					margin-left: 10px;
+				}
+			}
+		}
+
+		.content {
+
+			img {
+				max-width: 100%;
+				height: auto;
+			}
+		}
+	}
+}
