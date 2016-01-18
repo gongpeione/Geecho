@@ -24952,7 +24952,7 @@
 			optio quibusdam atque, quos obcaecati amet assumenda, \
 			incidunt. Doloribus in sequi impedit, ut eos.'
 	}, {
-		id: 1,
+		id: 4,
 		title: 'Lorem ipsum dolor sit amet.',
 		time: '2016/1/16',
 		comments: 10,
@@ -24964,7 +24964,7 @@
 			optio quibusdam atque, quos obcaecati amet assumenda, \
 			incidunt. Doloribus in sequi impedit, ut eos.'
 	}, {
-		id: 2,
+		id: 5,
 		title: 'Lorem ipsum dolor sit amet, consectetur adipisicing.',
 		time: '2016/1/16',
 		comments: 10,
@@ -24976,7 +24976,7 @@
 			optio quibusdam atque, quos obcaecati amet assumenda, \
 			incidunt. Doloribus in sequi impedit, ut eos.'
 	}, {
-		id: 3,
+		id: 6,
 		title: 'Lorem ipsum dolor.',
 		time: '2016/1/16',
 		comments: 10,
@@ -25294,22 +25294,79 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+	var data = {
+		id: 1,
+		title: 'Lorem ipsum dolor sit amet.',
+		time: '2016/1/16',
+		comments: 10,
+		thumb: '',
+		content: 'Lorem ipsum dolor sit amet, consectetur \
+			adipisicing elit. Reiciendis eveniet sequi corrupti \
+			neque quasi dicta nulla suscipit commodi harum ipsa, p\
+			erspiciatis quidem quas cupiditate sapiente distinctio \
+			optio quibusdam atque, quos obcaecati amet assumenda, \
+			incidunt. Doloribus in sequi impedit, ut eos.'
+	};
+
 	var Post = exports.Post = function (_React$Component) {
 		_inherits(Post, _React$Component);
 
 		function Post() {
 			_classCallCheck(this, Post);
 
-			return _possibleConstructorReturn(this, Object.getPrototypeOf(Post).apply(this, arguments));
+			var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Post).call(this));
+
+			_this.state = {
+				post: data
+			};
+			return _this;
 		}
 
 		_createClass(Post, [{
 			key: 'render',
 			value: function render() {
 				return _react2.default.createElement(
-					'div',
-					null,
-					this.props.params.id
+					'article',
+					{ className: 'post', id: "post-" + this.props.params.id },
+					_react2.default.createElement(
+						'header',
+						null,
+						_react2.default.createElement(
+							'h2',
+							null,
+							this.state.post.title
+						),
+						_react2.default.createElement(
+							'div',
+							{ className: 'meta' },
+							_react2.default.createElement(
+								'time',
+								{ date: '2016/1/16' },
+								this.state.post.time
+							),
+							_react2.default.createElement(
+								'span',
+								{ className: 'comments' },
+								_react2.default.createElement(
+									'a',
+									{ href: '#comments' },
+									this.state.post.comments,
+									' ',
+									this.state.post.comments > 1 ? 'Comments' : 'Comment'
+								)
+							)
+						)
+					),
+					_react2.default.createElement(
+						'section',
+						{ className: 'content' },
+						this.state.post.thumb !== '' ? _react2.default.createElement('img', { src: this.state.post.thumb, alt: this.state.post.title }) : '',
+						_react2.default.createElement(
+							'p',
+							null,
+							this.state.post.content
+						)
+					)
 				);
 			}
 		}]);

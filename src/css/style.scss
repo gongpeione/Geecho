@@ -18,8 +18,12 @@ a {
 }
 
 #main-container {
+	max-width: 40rem;
+	margin: 0 auto;
 	transition: .3s all ease-in-out;
 }
 @import 'header.scss';
 @import 'menu.scss';
 @import 'blog.scss';
+
+@import 'footer.scss';

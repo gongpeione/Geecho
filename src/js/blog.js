@@ -43,7 +43,7 @@ let data = [
 		incidunt. Doloribus in sequi impedit, ut eos.',		
 	},
 	{
-		id: 1,
+		id: 4,
 		title: 'Lorem ipsum dolor sit amet.',
 		time: '2016/1/16',
 		comments: 10,
@@ -56,7 +56,7 @@ let data = [
 		incidunt. Doloribus in sequi impedit, ut eos.',		
 	},
 	{
-		id: 2,
+		id: 5,
 		title: 'Lorem ipsum dolor sit amet, consectetur adipisicing.',
 		time: '2016/1/16',
 		comments: 10,
@@ -69,7 +69,7 @@ let data = [
 		incidunt. Doloribus in sequi impedit, ut eos.',		
 	},
 	{
-		id: 3,
+		id: 6,
 		title: 'Lorem ipsum dolor.',
 		time: '2016/1/16',
 		comments: 10,
