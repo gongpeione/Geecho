@@ -51,7 +51,6 @@ export class Wrap extends React.Component {
         <Menu />
 
         <div id="main-container">
-            <Header />
             {this.props.children}
             <Footer />
         </div>

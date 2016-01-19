@@ -439,26 +439,45 @@ a {
 #blog-container {
   max-width: 40rem;
   margin: 0 auto; }
-  #blog-container .post {
+  #blog-container .posts {
     margin-bottom: 80px; }
-    #blog-container .post header {
+    #blog-container .posts header {
       margin-bottom: 30px; }
-      #blog-container .post header a {
+      #blog-container .posts header a {
         color: #444;
         font-size: 1.6rem; }
-      #blog-container .post header h2 {
+      #blog-container .posts header h2 {
         margin-bottom: 5px; }
-      #blog-container .post header .meta,
-      #blog-container .post header .meta a {
+      #blog-container .posts header .meta,
+      #blog-container .posts header .meta a {
         font-size: 1.2rem;
         color: #ccc; }
-        #blog-container .post header .meta .comments,
-        #blog-container .post header .meta a .comments {
+        #blog-container .posts header .meta .comments,
+        #blog-container .posts header .meta a .comments {
           margin-left: 10px; }
-    #blog-container .post .content img {
+    #blog-container .posts .content img {
       max-width: 100%;
       height: auto; }
 
+.post {
+  padding: 80px 0; }
+  .post header {
+    text-align: center;
+    margin-bottom: 40px; }
+    .post header h1 {
+      font-size: 2.4rem; }
+  .post .meta,
+  .post .meta a {
+    font-size: 1.2rem;
+    color: #ccc; }
+    .post .meta .comments,
+    .post .meta a .comments {
+      margin-left: 10px; }
+  .post .content {
+    font-size: 1.2rem;
+    line-height: 1.5; }
+
 #footer {
   padding: 20px 0;
-  text-align: center; }
+  text-align: center;
+  color: #ccc; }

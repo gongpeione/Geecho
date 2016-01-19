@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, IndexRoute, Link, hashHistory } from 'react-router'
 
+import Header from './header.js';
+
 let data = [
 	{
 		id: 1,
@@ -91,7 +93,7 @@ export class PostsItem extends React.Component {
 
 		return (
 
-			<article className="post">
+			<article className="posts">
 				<header>
 					
 					<Link to={`/post/${post.id}`}>
@@ -137,6 +139,7 @@ export class Posts extends React.Component {
 
 		return (
 			<div id="blog-container">
+				<Header />
 				{posts}
 			</div>
 		);
