@@ -22,5 +22,17 @@
 	.content {
 		font-size: 1.2rem;
 		line-height: 1.5;
+
+		a {
+			color: $black;
+			text-decoration: underline;
+		}
+
+		:not(pre) code {
+			font-size: 1.1rem;
+			border: 1px solid $gray;
+			border-radius: 3px;
+			padding: 0 5px;
+		}
 	}
 }

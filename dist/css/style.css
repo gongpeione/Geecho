@@ -476,6 +476,14 @@ a {
   .post .content {
     font-size: 1.2rem;
     line-height: 1.5; }
+    .post .content a {
+      color: #444;
+      text-decoration: underline; }
+    .post .content :not(pre) code {
+      font-size: 1.1rem;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      padding: 0 5px; }
 
 #footer {
   padding: 20px 0;
