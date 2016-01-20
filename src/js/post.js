@@ -11,14 +11,10 @@ let data = {
 		comments: 10,
 		thumb: '',
 		content: '### Lorem ipsum dolor sit amet \n\nconsectetur \
-		adipisicing [elit](http://baidu.com). `Reiciendis` > eveniet sequi \n \ncorrupti \
+		adipisicing [elit](http://baidu.com). `Reiciendis` \n \n > Lorem ipsum \
+		dolor sit amet, \
+		consectetur adipisicing elit. Rem ea odit reiciendis tempora laboriosam \n\n ## corporis esse blanditiis consequatur \n\ncorrupti \
 		neque quasi dicta \n- nulla \n- suscipit \n- commodi harum ipsa \n \np\
-		erspiciatis quidem quas **cupiditate** sapiente distinctio  \n\
-		| Tables        | Are           | Cool  | \n \n\
-| ------------- |:-------------:| -----:| \n \n\
-| col 3 is      | right-aligned | $1600 | \n \n\
-| col 2 is      | centered      |   $12 | \n \n\
-| zebra stripes | are neat      |    $1 | \n \n\
 		optioquibusdam tque assumenda \n***\nincidunt. \n \
 		\n```javascript \n \n\
   var ihubo = { \n\
