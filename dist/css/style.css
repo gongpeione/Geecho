@@ -500,6 +500,9 @@ a {
       padding: .8rem 1rem;
       border-radius: 3px;
       background: #eee; }
+    .post .content img {
+      max-width: 100%;
+      height: auto; }
 
 #footer {
   padding: 20px 0;

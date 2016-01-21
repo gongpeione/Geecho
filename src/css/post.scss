@@ -58,5 +58,10 @@
 			border-radius: 3px;
 			background: $gray-light;
 		}
+
+		img {
+			max-width: 100%;
+			height: auto;
+		}
 	}
 }
