@@ -10,7 +10,10 @@ let data = {
 		time: '2016/1/16',
 		comments: 10,
 		thumb: '',
-		content: '### Lorem ipsum dolor sit amet \n\nconsectetur \
+		content: '\n \n > Lorem ipsum \
+		dolor sit amet,consectetur `<div>` adipisicing elit. Rem ea odit reiciendis tempora laboriosam  \
+		\n\n ![Img](http://cdn.sspai.com/attachment/thumbnail/2014/04/15/4f47235736535ed5932b15bdef64263b10f73_mw_800_wm_1_wmp_3.jpg) \n\n \
+		\n\n ## corporis esse blanditiis consequatur \n\ncorrupti \n\n### Lorem ipsum dolor sit amet \n\nconsectetur \
 		adipisicing [elit](http://baidu.com "Title"). `Reiciendis` \n \n > Lorem ipsum \
 		dolor sit amet,consectetur `<div>` adipisicing elit. Rem ea odit reiciendis tempora laboriosam  \
 		\n\n ![Img](http://cdn.sspai.com/attachment/thumbnail/2014/04/15/4f47235736535ed5932b15bdef64263b10f73_mw_800_wm_1_wmp_3.jpg) \n\n \
