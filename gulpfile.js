@@ -26,7 +26,8 @@ gulp.task('css', function () {
         .pipe(gulp.dest('./dist/css'))
         .pipe(rename({ suffix: '.min' }))
         .pipe(cssnano())
-        .pipe(gulp.dest('./dist/css'));
+        .pipe(gulp.dest('./dist/css'))
+        .pipe(gulp.dest('../geekuwork/css'));
 });
 
 // 图片处理
@@ -34,7 +35,8 @@ gulp.task('images', function(){
 
     gulp.src('./src/img/**/*')
         .pipe(imagemin())
-        .pipe(gulp.dest('./dist/img'));
+        .pipe(gulp.dest('./dist/img'))
+        .pipe(gulp.dest('../geekuwork/img'));
 })
 
 // js处理
@@ -42,7 +44,8 @@ gulp.task('js', function () {
 	
 	gulp.src('./src/js/main.js')
 		.pipe( webpack( require('./webpack.config.js') ) )
-    	.pipe(gulp.dest('./dist/js'));
+    	.pipe(gulp.dest('./dist/js'))
+        .pipe(gulp.dest('../geekuwork/js'));
 });
 
 // 清空图片、样式、js
