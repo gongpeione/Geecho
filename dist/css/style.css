@@ -369,7 +369,7 @@ a {
   height: 100%;
   background: #444;
   width: 15rem;
-  transform: translateX(-15rem);
+  transform: translate3d(-15rem, 0, 0);
   transition: .3s all ease-in-out; }
 
 .menu-button {
@@ -395,7 +395,7 @@ a {
   display: none; }
   #menu-slider:checked ~ .menu-button {
     background: #444;
-    transform: translateX(15rem); }
+    transform: translate3d(15rem, 0, 0); }
     #menu-slider:checked ~ .menu-button .button-line {
       background: #eee; }
     #menu-slider:checked ~ .menu-button .circle {
@@ -403,11 +403,11 @@ a {
     #menu-slider:checked ~ .menu-button .stick {
       background: #eee; }
   #menu-slider:checked ~ .search-button {
-    transform: translateX(15rem); }
+    transform: translate3d(15rem, 0, 0); }
   #menu-slider:checked ~ #menu {
-    transform: translateX(0rem); }
+    transform: translate3d(0rem, 0, 0); }
   #menu-slider:checked ~ #main-container {
-    transform: translateX(15rem); }
+    transform: translate3d(15rem, 0, 0); }
 
 .search-button {
   position: fixed;

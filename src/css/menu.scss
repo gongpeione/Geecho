@@ -3,7 +3,7 @@
 	height: 100%;
 	background: $black;
 	width: 15rem;
-	transform: translateX(-15rem);
+	transform: translate3d(-15rem, 0, 0);
 	transition: .3s all ease-in-out;
 }
 .menu-button {
@@ -35,7 +35,7 @@
 	&:checked {
 		& ~ .menu-button {
 			background: $black;
-			transform: translateX(15rem);
+			transform: translate3d(15rem, 0, 0);
 
 			.button-line {
 				background: #eee;
@@ -48,14 +48,14 @@
 			}
 		}
 		& ~ .search-button {
-			transform: translateX(15rem);
+			transform: translate3d(15rem, 0, 0);
 		}
 		& ~ #menu {
-			transform: translateX(0rem);
+			transform: translate3d(0rem, 0, 0);
 		}
 		& ~ #main-container
 		{
-			transform: translateX(15rem);
+			transform: translate3d(15rem, 0, 0);
 		}
 	}
 }
