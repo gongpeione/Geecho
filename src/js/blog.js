@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, IndexRoute, Link, hashHistory } from 'react-router'
+import { Router, Route, IndexRoute, Link, hashHistory } from 'react-router';
+import $ from 'jquery';
 
 import Header from './header.js';
 
 let data = [
-	{
+	/*{
 		id: 1,
 		title: 'Lorem ipsum dolor sit amet.',
 		time: '2016/1/16',
@@ -82,11 +83,11 @@ let data = [
 		erspiciatis quidem quas cupiditate sapiente distinctio \
 		optio quibusdam atque, quos obcaecati amet assumenda, \
 		incidunt. Doloribus in sequi impedit, ut eos.',		
-	}
+	}*/
 ];
 
 export class PostsItem extends React.Component {
-	
+
 	render() {
 
 		let post = this.props.data;
@@ -101,7 +102,7 @@ export class PostsItem extends React.Component {
 					</Link>
 					
 					<div className="meta">
-						<time date="2016/1/16">{post.time}</time>
+						<time date="2016/1/16">{post.date}</time>
 						<span className="comments">
 							<a href="#comments">{post.comments} {post.comments > 1 ? 'Comments' : 'Comment'}</a>
 						</span>
@@ -146,9 +147,33 @@ export class Posts extends React.Component {
 	}
 }
 export class Blog extends React.Component {
+
+	constructor(props) {
+		super(props);
+
+		this.state = {data: []};
+	}
+
+	componentDidMount() {
+		$.ajax({
+			url: 'https://geeku.net/post_json?type=list',
+			dataType: 'jsonp',
+			cache: false,
+			success: function(data) {
+				console.log(data);
+				this.setState({data: data});
+				console.log(this.state);
+			}.bind(this),
+			error: function(xhr, status, err) {
+				console.error(this.props.url, status, err.toString());
+			}.bind(this)
+		});
+	}
+
 	render() {
 		return (
-	        <Posts data={data} />
+
+	        <Posts data={this.state.data} />
 	    );
 	}
 }
