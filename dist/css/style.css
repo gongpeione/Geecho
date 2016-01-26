@@ -483,6 +483,8 @@ a {
       border-bottom: 1px dashed #ccc; }
       .post .content a:hover {
         border-color: #444; }
+      .post .content a[href$=jpg], .post .content a[href$=png], .post .content a[href$=gif], .post .content a[href$=webp] {
+        border-bottom: none; }
     .post .content h2 {
       padding: 0 2rem;
       margin-left: calc(-2rem - 5px);

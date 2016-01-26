@@ -1,5 +1,5 @@
 .post {
-	
+
 	padding: 80px 0;
 
 	header {
@@ -31,6 +31,13 @@
 
 			&:hover {
 				border-color: $black;
+			}
+
+			&[href$=jpg],
+			&[href$=png],
+			&[href$=gif],
+			&[href$=webp] {
+				border-bottom: none;
 			}
 		}
 

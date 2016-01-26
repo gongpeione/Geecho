@@ -102,7 +102,7 @@ export class PostsItem extends React.Component {
 					</Link>
 					
 					<div className="meta">
-						<time date="2016/1/16">{post.date}</time>
+						<time datetime={post.date}>{post.date}</time>
 						<span className="comments">
 							<a href="#comments">{post.comments} {post.comments > 1 ? 'Comments' : 'Comment'}</a>
 						</span>

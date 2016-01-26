@@ -2,9 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, IndexRoute, Link, hashHistory } from 'react-router';
 import Marked from 'marked';
+import $ from 'jquery';
 
 
-let data = {
+/*let data = {
 		id: 1,
 		title: 'Lorem ipsum dolor sit amet.',
 		time: '2016/1/16',
@@ -27,7 +28,7 @@ let data = {
   }\n\
 ```\n\
 Doloribus in sequi impedit, ut eos.',		
-	};
+	};*/
 
 
 export class Post extends React.Component {
@@ -35,13 +36,35 @@ export class Post extends React.Component {
 	constructor() {
 		super();
 		this.state = {
-			post: data
+			post: {'content' : ''}
 		}
 	}
 
-	rawMarkup() {
-		var rawMarkup = Marked(this.state.post.content.toString(), {sanitize: true});
-		return { __html: rawMarkup };
+	rawMarkup(content) {
+		if(content !== '') {
+			//var rawMarkup = Marked(content.toString(), {sanitize: true});
+			//return { __html: rawMarkup };
+			return { __html: content.replace("\n", "<br/>") };
+			
+		} else {
+			return { __html: '' };
+		}
+	}
+
+	componentDidMount() {
+		$.ajax({
+			url: 'https://geeku.net/post_json?id=' + this.props.params.id,
+			dataType: 'jsonp',
+			cache: false,
+			success: function(data) {
+				console.log(data);
+				this.setState({post: data});
+				console.log(this.state);
+			}.bind(this),
+			error: function(xhr, status, err) {
+				console.error(this.props.url, status, err.toString());
+			}.bind(this)
+		});
 	}
 
 
@@ -53,7 +76,7 @@ export class Post extends React.Component {
 					<h1>{this.state.post.title}</h1>
 					
 					<div className="meta">
-						<time date={this.state.post.time}>{this.state.post.time}</time>
+						<time datetime={this.state.post.date}>{this.state.post.date}</time>
 						<span className="comments">
 							<a href="#comments">{this.state.post.comments} {this.state.post.comments > 1 ? 'Comments' : 'Comment'}</a>
 						</span>
@@ -69,7 +92,7 @@ export class Post extends React.Component {
 						''
 					}
 
-					<p dangerouslySetInnerHTML={this.rawMarkup()} />
+					<p dangerouslySetInnerHTML={this.rawMarkup(this.state.post.content)} />
 
 				</section>
 			</article>
