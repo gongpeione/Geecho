@@ -97,31 +97,20 @@ export class PostsItem extends React.Component {
 			<article className="posts">
 				<header>
 					
-					<Link to={`/post/${post.id}`}>
-						<h2>{post.title}</h2>
+					<Link to={`/post/${post.name}`}>
+						<h2>{post.name.replace(/.md/i, '')}</h2>
 					</Link>
 					
 					<div className="meta">
-						<time datetime={post.date}>{post.date}</time>
-						<span className="comments">
-							<a href="#comments">{post.comments} {post.comments > 1 ? 'Comments' : 'Comment'}</a>
+						<span className="words-counter">
+							Length: {post.size} 
+						</span>
+						<span className="category">
+							Category: {post.path.match(/(.*?)\/.*?\.md/)[1]} 
 						</span>
 					</div>
 				</header>
 
-				<section className="content">
-
-					{
-						post.thumb !== '' ?
-						<img src={post.thumb} alt={post.title}/>
-						:
-						''
-					}
-
-					<p>
-						{post.content}
-					</p>
-				</section>
 			</article>
 		);
 	}
@@ -134,7 +123,7 @@ export class Posts extends React.Component {
 		let posts = this.props.data.map(function(post) {
 				
 			return (
-				<PostsItem data={post} key={post.id} />
+				<PostsItem data={post} key={post.sha} />
 			);
 		});
 
@@ -156,16 +145,18 @@ export class Blog extends React.Component {
 
 	componentDidMount() {
 		$.ajax({
-			url: 'https://geeku.net/post_json?type=list',
+			url: 'https://api.github.com/repos/gongpeione/geblog/contents/Front',
 			dataType: 'jsonp',
 			cache: false,
-			success: function(data) {
-				console.log(data);
-				this.setState({data: data});
-				console.log(this.state);
+			success: function(content) {
+
+				this.setState({data: content.data});
+
 			}.bind(this),
 			error: function(xhr, status, err) {
+
 				console.error(this.props.url, status, err.toString());
+				
 			}.bind(this)
 		});
 	}

@@ -40,6 +40,17 @@ export class SearchBtn extends React.Component {
   }
 }
 
+export class Loading extends React.Component {
+  render() {
+    return (
+        <div id="loading">
+            <div className="circle"></div>
+            <div className="stick"></div>
+        </div>
+    );
+  }
+}
+
 export class Wrap extends React.Component {
   render() {
     return (
@@ -51,6 +62,7 @@ export class Wrap extends React.Component {
         <Menu />
 
         <div id="main-container">
+            <Loading />
             {this.props.children}
             <Footer />
         </div>
@@ -70,7 +82,7 @@ ReactDOM.render((
     <Route path="/" component={Wrap}>
       <IndexRoute component={Blog} />
       <Route path="about" component={About} />
-      <Route path="post/:id" component={Post} />
+      <Route path="post/:title" component={Post} />
     </Route>
   </Router>
 ), document.getElementById('app'));

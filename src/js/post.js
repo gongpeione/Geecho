@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { Router, Route, IndexRoute, Link, hashHistory } from 'react-router';
 import Marked from 'marked';
 import $ from 'jquery';
+import Base64 from 'js-base64';
 
 
 /*let data = {
@@ -44,7 +45,7 @@ export class Post extends React.Component {
 		if(content !== '') {
 			//var rawMarkup = Marked(content.toString(), {sanitize: true});
 			//return { __html: rawMarkup };
-			return { __html: content.replace("\n", "<br/>") };
+			return { __html: Base64.decode(content) };
 			
 		} else {
 			return { __html: '' };
@@ -53,16 +54,19 @@ export class Post extends React.Component {
 
 	componentDidMount() {
 		$.ajax({
-			url: 'https://geeku.net/post_json?id=' + this.props.params.id,
+			url: 'https://api.github.com/repos/gongpeione/geblog/contents/Front/' + this.props.params.title,
 			dataType: 'jsonp',
 			cache: false,
-			success: function(data) {
-				console.log(data);
-				this.setState({post: data});
+			success: function(content) {
+
+				this.setState({post: content.data});
 				console.log(this.state);
+
 			}.bind(this),
 			error: function(xhr, status, err) {
+
 				console.error(this.props.url, status, err.toString());
+
 			}.bind(this)
 		});
 	}
@@ -70,27 +74,22 @@ export class Post extends React.Component {
 
 	render() {
 		return (
-			<article className="post" id={"post-" +  this.props.params.id}>
+			<article className="post">
 				<header>
 					
-					<h1>{this.state.post.title}</h1>
+					<h1>{this.state.post.name}</h1>
 					
 					<div className="meta">
-						<time datetime={this.state.post.date}>{this.state.post.date}</time>
-						<span className="comments">
-							<a href="#comments">{this.state.post.comments} {this.state.post.comments > 1 ? 'Comments' : 'Comment'}</a>
+						<span className="words-counter">
+							Length: {this.state.post.size} 
+						</span>
+						<span className="category">
+							Category: {this.state.post.path} 
 						</span>
 					</div>
 				</header>
 
 				<section className="content">
-
-					{
-						this.state.post.thumb !== '' ?
-						<img src={this.state.post.thumb} alt={this.state.post.title}/>
-						:
-						''
-					}
 
 					<p dangerouslySetInnerHTML={this.rawMarkup(this.state.post.content)} />
 
