@@ -35234,7 +35234,7 @@
 				if (content !== '') {
 					//var rawMarkup = Marked(content.toString(), {sanitize: true});
 					//return { __html: rawMarkup };
-					return { __html: _jsBase2.default.decode(content) };
+					return { __html: (0, _marked2.default)(_jsBase2.default.Base64.decode(content)) };
 				} else {
 					return { __html: '' };
 				}

@@ -31,7 +31,6 @@ import Base64 from 'js-base64';
 Doloribus in sequi impedit, ut eos.',		
 	};*/
 
-
 export class Post extends React.Component {
 
 	constructor() {
@@ -45,7 +44,7 @@ export class Post extends React.Component {
 		if(content !== '') {
 			//var rawMarkup = Marked(content.toString(), {sanitize: true});
 			//return { __html: rawMarkup };
-			return { __html: Base64.decode(content) };
+			return { __html: Marked( Base64.Base64.decode(content) ) };
 			
 		} else {
 			return { __html: '' };
