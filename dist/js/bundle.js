@@ -228,7 +228,7 @@
 	  _react2.default.createElement(
 	    _reactRouter.Route,
 	    { path: '/', component: Wrap },
-	    _react2.default.createElement(_reactRouter.IndexRoute, { component: _blog2.default }),
+	    _react2.default.createElement(_reactRouter.IndexRoute, { component: _blog2.default, url: 'https://github.com' }),
 	    _react2.default.createElement(_reactRouter.Route, { path: 'about', component: _about2.default }),
 	    _react2.default.createElement(_reactRouter.Route, { path: 'post/:title', component: _post2.default })
 	  )
@@ -24947,87 +24947,6 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var data = [
-		/*{
-	 	id: 1,
-	 	title: 'Lorem ipsum dolor sit amet.',
-	 	time: '2016/1/16',
-	 	comments: 10,
-	 	thumb: '',
-	 	content: 'Lorem ipsum dolor sit amet, consectetur \
-	 	adipisicing elit. Reiciendis eveniet sequi corrupti \
-	 	neque quasi dicta nulla suscipit commodi harum ipsa, p\
-	 	erspiciatis quidem quas cupiditate sapiente distinctio \
-	 	optio quibusdam atque, quos obcaecati amet assumenda, \
-	 	incidunt. Doloribus in sequi impedit, ut eos.',		
-	 },
-	 {
-	 	id: 2,
-	 	title: 'Lorem ipsum dolor sit amet, consectetur adipisicing.',
-	 	time: '2016/1/16',
-	 	comments: 10,
-	 	thumb: 'img/default.jpg',
-	 	content: 'Lorem ipsum dolor sit amet, consectetur \
-	 	adipisicing elit. Reiciendis eveniet sequi corrupti \
-	 	neque quasi dicta nulla suscipit commodi harum ipsa, p\
-	 	erspiciatis quidem quas cupiditate sapiente distinctio \
-	 	optio quibusdam atque, quos obcaecati amet assumenda, \
-	 	incidunt. Doloribus in sequi impedit, ut eos.',		
-	 },
-	 {
-	 	id: 3,
-	 	title: 'Lorem ipsum dolor.',
-	 	time: '2016/1/16',
-	 	comments: 10,
-	 	thumb: '',
-	 	content: 'Lorem ipsum dolor sit amet, consectetur \
-	 	adipisicing elit. Reiciendis eveniet sequi corrupti \
-	 	neque quasi dicta nulla suscipit commodi harum ipsa, p\
-	 	erspiciatis quidem quas cupiditate sapiente distinctio \
-	 	optio quibusdam atque, quos obcaecati amet assumenda, \
-	 	incidunt. Doloribus in sequi impedit, ut eos.',		
-	 },
-	 {
-	 	id: 4,
-	 	title: 'Lorem ipsum dolor sit amet.',
-	 	time: '2016/1/16',
-	 	comments: 10,
-	 	thumb: '',
-	 	content: 'Lorem ipsum dolor sit amet, consectetur \
-	 	adipisicing elit. Reiciendis eveniet sequi corrupti \
-	 	neque quasi dicta nulla suscipit commodi harum ipsa, p\
-	 	erspiciatis quidem quas cupiditate sapiente distinctio \
-	 	optio quibusdam atque, quos obcaecati amet assumenda, \
-	 	incidunt. Doloribus in sequi impedit, ut eos.',		
-	 },
-	 {
-	 	id: 5,
-	 	title: 'Lorem ipsum dolor sit amet, consectetur adipisicing.',
-	 	time: '2016/1/16',
-	 	comments: 10,
-	 	thumb: '',
-	 	content: 'Lorem ipsum dolor sit amet, consectetur \
-	 	adipisicing elit. Reiciendis eveniet sequi corrupti \
-	 	neque quasi dicta nulla suscipit commodi harum ipsa, p\
-	 	erspiciatis quidem quas cupiditate sapiente distinctio \
-	 	optio quibusdam atque, quos obcaecati amet assumenda, \
-	 	incidunt. Doloribus in sequi impedit, ut eos.',		
-	 },
-	 {
-	 	id: 6,
-	 	title: 'Lorem ipsum dolor.',
-	 	time: '2016/1/16',
-	 	comments: 10,
-	 	thumb: '',
-	 	content: 'Lorem ipsum dolor sit amet, consectetur \
-	 	adipisicing elit. Reiciendis eveniet sequi corrupti \
-	 	neque quasi dicta nulla suscipit commodi harum ipsa, p\
-	 	erspiciatis quidem quas cupiditate sapiente distinctio \
-	 	optio quibusdam atque, quos obcaecati amet assumenda, \
-	 	incidunt. Doloribus in sequi impedit, ut eos.',		
-	 }*/
-	];
-
 	var PostsItem = exports.PostsItem = function (_React$Component) {
 		_inherits(PostsItem, _React$Component);
 
@@ -25055,7 +24974,7 @@
 							_react2.default.createElement(
 								'h2',
 								null,
-								post.name.replace(/.md/i, '')
+								post.name.replace(/\.md/i, '')
 							)
 						),
 						_react2.default.createElement(
@@ -25144,6 +25063,9 @@
 		}, {
 			key: 'render',
 			value: function render() {
+				{
+					console.log(this.props);
+				}
 				return _react2.default.createElement(Posts, { data: this.state.data });
 			}
 		}]);
@@ -35223,7 +35145,7 @@
 			var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Post).call(this));
 
 			_this.state = {
-				post: { 'content': '' }
+				post: { 'content': '', 'name': '', 'path': 'Null/Null.md' }
 			};
 			return _this;
 		}
@@ -35269,7 +35191,7 @@
 						_react2.default.createElement(
 							'h1',
 							null,
-							this.state.post.name
+							this.state.post.name.replace(/\.md/i, '')
 						),
 						_react2.default.createElement(
 							'div',
@@ -35284,7 +35206,7 @@
 								'span',
 								{ className: 'category' },
 								'Category: ',
-								this.state.post.path
+								this.state.post.path.match(/(.*?)\/.*?\.md/)[1]
 							)
 						)
 					),

@@ -80,7 +80,7 @@ ReactDOM.render(
 ReactDOM.render((
   <Router history={hashHistory}>
     <Route path="/" component={Wrap}>
-      <IndexRoute component={Blog} />
+      <IndexRoute component={Blog} url="https://github.com"/>
       <Route path="about" component={About} />
       <Route path="post/:title" component={Post} />
     </Route>

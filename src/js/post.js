@@ -36,7 +36,7 @@ export class Post extends React.Component {
 	constructor() {
 		super();
 		this.state = {
-			post: {'content' : ''}
+			post: {'content' : '', 'name' : '', 'path' : 'Null/Null.md'}
 		}
 	}
 
@@ -76,14 +76,14 @@ export class Post extends React.Component {
 			<article className="post">
 				<header>
 					
-					<h1>{this.state.post.name}</h1>
+					<h1>{this.state.post.name.replace(/\.md/i, '')}</h1>
 					
 					<div className="meta">
 						<span className="words-counter">
 							Length: {this.state.post.size} 
 						</span>
 						<span className="category">
-							Category: {this.state.post.path} 
+							Category: {this.state.post.path.match(/(.*?)\/.*?\.md/)[1]} 
 						</span>
 					</div>
 				</header>

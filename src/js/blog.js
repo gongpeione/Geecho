@@ -5,87 +5,6 @@ import $ from 'jquery';
 
 import Header from './header.js';
 
-let data = [
-	/*{
-		id: 1,
-		title: 'Lorem ipsum dolor sit amet.',
-		time: '2016/1/16',
-		comments: 10,
-		thumb: '',
-		content: 'Lorem ipsum dolor sit amet, consectetur \
-		adipisicing elit. Reiciendis eveniet sequi corrupti \
-		neque quasi dicta nulla suscipit commodi harum ipsa, p\
-		erspiciatis quidem quas cupiditate sapiente distinctio \
-		optio quibusdam atque, quos obcaecati amet assumenda, \
-		incidunt. Doloribus in sequi impedit, ut eos.',		
-	},
-	{
-		id: 2,
-		title: 'Lorem ipsum dolor sit amet, consectetur adipisicing.',
-		time: '2016/1/16',
-		comments: 10,
-		thumb: 'img/default.jpg',
-		content: 'Lorem ipsum dolor sit amet, consectetur \
-		adipisicing elit. Reiciendis eveniet sequi corrupti \
-		neque quasi dicta nulla suscipit commodi harum ipsa, p\
-		erspiciatis quidem quas cupiditate sapiente distinctio \
-		optio quibusdam atque, quos obcaecati amet assumenda, \
-		incidunt. Doloribus in sequi impedit, ut eos.',		
-	},
-	{
-		id: 3,
-		title: 'Lorem ipsum dolor.',
-		time: '2016/1/16',
-		comments: 10,
-		thumb: '',
-		content: 'Lorem ipsum dolor sit amet, consectetur \
-		adipisicing elit. Reiciendis eveniet sequi corrupti \
-		neque quasi dicta nulla suscipit commodi harum ipsa, p\
-		erspiciatis quidem quas cupiditate sapiente distinctio \
-		optio quibusdam atque, quos obcaecati amet assumenda, \
-		incidunt. Doloribus in sequi impedit, ut eos.',		
-	},
-	{
-		id: 4,
-		title: 'Lorem ipsum dolor sit amet.',
-		time: '2016/1/16',
-		comments: 10,
-		thumb: '',
-		content: 'Lorem ipsum dolor sit amet, consectetur \
-		adipisicing elit. Reiciendis eveniet sequi corrupti \
-		neque quasi dicta nulla suscipit commodi harum ipsa, p\
-		erspiciatis quidem quas cupiditate sapiente distinctio \
-		optio quibusdam atque, quos obcaecati amet assumenda, \
-		incidunt. Doloribus in sequi impedit, ut eos.',		
-	},
-	{
-		id: 5,
-		title: 'Lorem ipsum dolor sit amet, consectetur adipisicing.',
-		time: '2016/1/16',
-		comments: 10,
-		thumb: '',
-		content: 'Lorem ipsum dolor sit amet, consectetur \
-		adipisicing elit. Reiciendis eveniet sequi corrupti \
-		neque quasi dicta nulla suscipit commodi harum ipsa, p\
-		erspiciatis quidem quas cupiditate sapiente distinctio \
-		optio quibusdam atque, quos obcaecati amet assumenda, \
-		incidunt. Doloribus in sequi impedit, ut eos.',		
-	},
-	{
-		id: 6,
-		title: 'Lorem ipsum dolor.',
-		time: '2016/1/16',
-		comments: 10,
-		thumb: '',
-		content: 'Lorem ipsum dolor sit amet, consectetur \
-		adipisicing elit. Reiciendis eveniet sequi corrupti \
-		neque quasi dicta nulla suscipit commodi harum ipsa, p\
-		erspiciatis quidem quas cupiditate sapiente distinctio \
-		optio quibusdam atque, quos obcaecati amet assumenda, \
-		incidunt. Doloribus in sequi impedit, ut eos.',		
-	}*/
-];
-
 export class PostsItem extends React.Component {
 
 	render() {
@@ -95,10 +14,9 @@ export class PostsItem extends React.Component {
 		return (
 
 			<article className="posts">
-				<header>
-					
+				<header>	
 					<Link to={`/post/${post.name}`}>
-						<h2>{post.name.replace(/.md/i, '')}</h2>
+						<h2>{post.name.replace(/\.md/i, '')}</h2>
 					</Link>
 					
 					<div className="meta">
@@ -161,7 +79,7 @@ export class Blog extends React.Component {
 		});
 	}
 
-	render() {
+	render() {{console.log(this.props)}
 		return (
 
 	        <Posts data={this.state.data} />
