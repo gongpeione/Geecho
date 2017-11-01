@@ -7,27 +7,24 @@ export default class Aside extends Component {
         this.state = {
             asideExpended: false
         };
+        console.log(this.props);
     }
 
     toggleAside () {
+        this.props.ctrlCover(!this.state.asideExpended);
         this.setState({
-          asideExpended: !this.state.asideExpended
+            asideExpended: !this.state.asideExpended
         });
-      }
+    }
 
     render () {
         return (
-            <aside 
-                className={`blog-aside ${this.state.asideExpended ? 'expend' : ''}`}
-            >
-                <div 
-                    data-cover={!this.state.asideExpended}
-                    className="aside-toggle" onClick={this.toggleAside.bind(this)}
-                >
-                T
+            <aside className={`blog-aside ${this.state.asideExpended ? 'expend' : ''}`}>
+                <div className="aside-toggle" onClick={this.toggleAside.bind(this)}>
+                    T
                 </div>
                 <nav>
-                Aside
+                    Aside
                 </nav>
             </aside>
         )
