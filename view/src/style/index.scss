@@ -2,6 +2,16 @@
 @import './global';
 @import './color';
 
+#root,
+.App {
+    min-height: 100vh;
+}
+
+.App {
+    display: flex;
+    flex-direction: column;
+}
+
 .blog-header {
     background-image: $main-color-gradient;
     color: #fff;
@@ -16,5 +26,63 @@
     }
     h1 {
         display: none;
+    }
+}
+
+.blog-main {
+    flex: 1;
+    padding: 4vw 2vw;
+}
+
+.blog-footer {
+    color: $text-gray;
+    padding: 40px;
+    text-align: center;
+    font-weight: 100;
+}
+
+.blog-aside {
+    position: fixed;
+    right: 0;
+    top: 0;
+    background-color: #333;
+    height: 100vh;
+    width: 300px;
+    color: #fff;
+    transform: translateX(100%);
+    transition: .1s transform ease-in-out;
+    z-index: 2;
+
+    &.expend {
+        transform: translateX(0)
+    }
+
+    .aside-toggle {
+        position: absolute;
+        display: inline-block;
+        transform: translateX(-100%)
+    }
+}
+
+.g-card {
+    background: $gray;
+    padding: 2vw 1.5vw;
+    border-radius: .5vw;
+
+    p {
+        margin: 0;
+    }
+}
+
+.cover {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    background-color: rgba(0,0,0,.8);
+    display: none;
+    &.expend {
+        display: block;
     }
 }
