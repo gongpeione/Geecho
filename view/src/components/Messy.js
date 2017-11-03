@@ -13,28 +13,31 @@ export default class Messy extends Component {
 
     componentDidMount () {
         const content = this.props.children || this.props.content || '';
+        const gap = +this.props.gap || 80;
+        const delay = +this.props.delay || 0;
         if (!Array.isArray(content)) {
-            this.messyWords(content);
+            this.messyWords(content + '', gap, delay);
         } else {
-            this.messyLines(content);
+            this.messyLines(content, gap, delay);
         }
     }
 
-    async messyLines (lines) {
+    async messyLines (lines, gap = 80, delay = 0) {
         const l = lines.length;
         for (let i = 0; i < l; i++) {
-            await this.messyWords(lines[i], +this.props.delay || 0);
+            await this.messyWords(lines[i], gap, delay);
         }
     }
 
-    messyWords (str, delay = 0) {
-        const resultStr = Array.from({length: str.length}).fill(0);
+    messyWords (str, gap = 80, delay = 0) {
+        const strLength = str.length;
+        const resultStr = Array.from({length: strLength}).fill(0);
         let i = 0;
         
         return new Promise((r, j) => {
             const messyTimer = window.setInterval(() => {
                 resultStr[i] = str[i];
-                generateStr(++i, resultStr);
+                generateStr(++i, strLength);
                 this.setState({
                     resultStr: resultStr.join('')
                 });
@@ -44,16 +47,13 @@ export default class Messy extends Component {
                         r();
                     }, delay);
                 }
-            }, 80);
+            }, gap);
         });
 
-        function generateStr (start, str) {
-            str.forEach((_, i) => {
-                if (i < start) {
-                    return;
-                }
+        function generateStr (start, length) {
+            for (let i = start; i < length; i++) {
                 resultStr[i] = codes[~~(Math.random() * codes.length)];
-            });
+            }
         }
     }
 

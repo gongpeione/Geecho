@@ -15,7 +15,6 @@
 .blog-header {
     background-image: $main-color-gradient;
     color: #fff;
-    padding: 80px;
     font-weight: 100;
 
     .blog-logo {
@@ -29,18 +28,28 @@
     h2 {
         display: inline;
         font-size: 14px;
-        color: rgba(255,255,255,.8)
+        color: rgba(255,255,255,.8);
+    }
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .pattern {
+        padding: 80px 0;
+        background-image: url(https://www.transparenttextures.com/patterns/old-mathematics.png);
     }
 }
 
 .blog-main {
     flex: 1;
-    padding: 4vw 2vw;
-    margin: 0 auto;
+    padding: 4vw 0;
 }
 
 .container {
-    width: 960px;
+    width: 80%;
+    max-width: 960px;
     margin: 0 auto;
 }
 
@@ -71,6 +80,29 @@
         position: absolute;
         display: inline-block;
         transform: translateX(-100%)
+    }
+}
+
+.blog-menu {
+    display: inline-block;
+    float: right;
+
+    a {
+        display: inline-block;
+        padding: 10px 0;
+        color: #fff;
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+        margin: 0 10px;
+        font-size: 16px;
+        transition: all .2s ease-in-out;
+        &:hover {
+            border-bottom-color: rgba(255,255,255,.5);
+        }
+        &.active {
+            color: #fff;
+            border-bottom-color: currentColor;
+        }
     }
 }
 

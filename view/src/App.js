@@ -3,6 +3,8 @@ import logo from './img/logo.svg';
 import './style/index.scss';
 
 import Aside from './layout/Aside';
+import Menu from './layout/Menu';
+
 import Card from './components/Card';
 import Messy from './components/Messy';
 
@@ -40,12 +42,17 @@ class App extends Component {
         return (
             <div className="App" onClick={this.appClickHandler.bind(this)}>
                 <header className="blog-header">
-                    <div className="container">
-                        <img src={logo} className="blog-logo" alt="logo" />
-                        <h1 className="blog-title">{bloginfo.name}</h1>
-                        <h2>
-                            <Messy delay={2000} tag="span">{ bloginfo.subtitle }</Messy>
-                        </h2>
+                    <div className="pattern">
+                        <div className="container">
+                            <div className="logo">
+                                <img src={logo} className="blog-logo" alt="logo" />
+                                <h1 className="blog-title">{bloginfo.name}</h1>
+                                <h2>
+                                    <Messy delay={2000} tag="span">{ bloginfo.subtitle }</Messy>
+                                </h2>
+                            </div>
+                            <Menu></Menu>
+                        </div>
                     </div>
                 </header>
                 <main className="blog-main">
@@ -63,7 +70,7 @@ class App extends Component {
                 </main>
                 <Aside ctrlCover={ this.ctrlCover.bind(this) }></Aside>
                 <footer className="blog-footer">
-                    <Messy delay={2000}>Footer</Messy>
+                    <Messy delay={2000} gap={100}>Geeku.Net</Messy>
                 </footer>
 
                 <div className={`cover ${this.state.coverExpended ? 'expend' : ''}`}></div>
