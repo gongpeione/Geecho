@@ -33,9 +33,13 @@ export default class Articles extends Component {
             Aside
         </aside>;
 
-        return [
-            <section className="articles">{articles}</section>, 
-            aside
-        ];
+        return (
+            <div className="article-wrap">
+                <section className="articles">{articles}</section>
+                <aside>
+                    Aside
+                </aside>
+            </div>
+        )
     }
 }
