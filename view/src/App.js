@@ -21,8 +21,8 @@ import bloginfo from './bloginfo.json';
 
 const Homepage = () => {
     return [
-        <Gallery></Gallery>,
-        <Articles></Articles>
+        <Articles></Articles>,
+        <Gallery></Gallery>
     ]
 }
 class App extends Component {

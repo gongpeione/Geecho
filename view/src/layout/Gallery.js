@@ -30,8 +30,6 @@ export default class Gallery extends Component {
                         'https://images.unsplash.com/photo-1509645257744-dfd14c2cb4aa?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&s=8df1b21e2a968eb9a58928e1979b75d5',
                         'https://images.unsplash.com/photo-1509641498745-13c26fd1ed89?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&s=27bf006f58c68070cff65b7268c910fd',
                         'https://images.unsplash.com/photo-1509653087866-91f6c2ab59f2?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&s=643f15dcf6da04cf3f8d3bd3fb14e589',
-                        'https://images.unsplash.com/photo-1509639576104-1feb7f92ef2b?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&s=0bfde7fa28aaac83632d2a9a92aa2320',
-                        'https://images.unsplash.com/photo-1509649792344-29df1e817056?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&s=398c42a804419e625c52f81b676e0ab1',
                         'https://images.unsplash.com/photo-1509654928771-f34ae3670858?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&s=ae55262731e4823ac66d279d87c04432'
                     ].map((src, index) => {
                         return (
