@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import {
     Link,
-} from 'react-router-dom'
+} from 'react-router-dom';
+import Like from '../components/Like';
 
 export default class Gallery extends Component {
 
@@ -34,6 +35,7 @@ export default class Gallery extends Component {
                     ].map((src, index) => {
                         return (
                             <figure className="img-cover" style={{backgroundImage :`url(${src})`}} onClick={this.toggleFullsize.bind(this, src)}>
+                                <Like></Like>
                                 <img src={src} alt=""/>
                             </figure>
                         )
@@ -41,6 +43,7 @@ export default class Gallery extends Component {
                 }
                 <div className={`fullsize ${this.state.showFullsize ? 'show' : ''}`} onClick={ () => this.setState({showFullsize: false}) }>
                     <img src={this.state.curImgSrc} />
+                    <Like></Like>
                 </div>
             </section>
         )

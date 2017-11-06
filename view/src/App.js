@@ -21,7 +21,9 @@ import bloginfo from './bloginfo.json';
 
 const Homepage = () => {
     return [
+        <h3 className="home-subtitle">Posts</h3>,
         <Articles></Articles>,
+        <h3 className="home-subtitle">Photography</h3>,
         <Gallery></Gallery>
     ]
 }
