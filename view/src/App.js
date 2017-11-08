@@ -12,10 +12,12 @@ import {
 import Header from './layout/Header';
 import Aside from './layout/Aside';
 import Articles from './layout/Articles';
+import Article from './layout/Article';
 import Gallery from './layout/Gallery';
 
 import Card from './components/Card';
 import Messy from './components/Messy';
+import Button from './components/Button';
 
 import bloginfo from './bloginfo.json';
 
@@ -23,8 +25,10 @@ const Homepage = () => {
     return [
         <h3 className="home-subtitle">Posts</h3>,
         <Articles></Articles>,
+        <Button className="center">More Posts</Button>,
         <h3 className="home-subtitle">Photography</h3>,
-        <Gallery></Gallery>
+        <Gallery></Gallery>,
+        <Button>More Photos</Button>
     ]
 }
 class App extends Component {
@@ -65,6 +69,7 @@ class App extends Component {
                     <div className="container">
                     <Switch>
                         <Route exact path='/' component={Homepage}/>
+                        <Route path='/post/:id' component={Article}/>
                     </Switch>
                     </div>
                 </main>

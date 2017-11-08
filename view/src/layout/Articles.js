@@ -17,7 +17,7 @@ export default class Articles extends Component {
                 <article key={key}>
                     <img src="https://placeimg.com/640/200/any" className="feature-img"/>
                     <section className="content">
-                        <Link to={`/articles/${key}`}>
+                        <Link to={`/post/${key}`}>
                             <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, laborum.</h2>
                         </Link>
                         <section className="meta">

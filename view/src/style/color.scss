@@ -1,11 +1,14 @@
 $main-color: #1657CE;
 $main-color-light: #55D6EA;
 $main-color-gradient: linear-gradient(135deg, #1657CE 0%, #55D6EA 100%);
+$main-color-gradient-reverse: linear-gradient(-135deg, #1657CE 0%, #55D6EA 100%);
 $main-color-gradient-transparent: linear-gradient(135deg, rgba(22, 90, 206, 0.2) 0%, rgba(85, 214, 234, 0.2) 100%);
 
 $second-color: #ffbb35;
 $red: #f13b3b;
 
+$main-color-shadow: rgba(13, 51, 116, 0.8);
+$main-color-shadow-light: rgba(13, 51, 116, 0.2);
 
 $black: #333;
 $gray: #d7e9f3;
