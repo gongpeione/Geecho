@@ -45,7 +45,9 @@ input {
 }
 
 .blog-header {
-    background-image: $main-color-gradient;
+    background-image: $second-color-gradient;
+    background-color: $main-color;
+    background-attachment: fixed;
     color: #fff;
     font-weight: 100;
 
@@ -78,7 +80,7 @@ input {
     }
     .pattern {
         padding: 40px 2vw;
-        background-image: url(https://www.transparenttextures.com/patterns/subtle-dots.png);
+        // background-image: url(https://www.transparenttextures.com/patterns/subtle-dots.png);
     }
 }
 
@@ -101,34 +103,43 @@ input {
 
     article {
         margin-bottom: 20px;
-        background-color: #fff;
+        // background: linear-gradient(135deg, #1657CE 0%, #55D6EA 100%);
+        background: $second-color-gradient;
+        background-attachment: fixed;
         border-radius: 5px;
         position: relative;
+        padding: 1px;
         // border: 1px solid #eee;
         box-shadow: 0 0 0 $main-color-shadow;
         overflow: hidden;
         text-align: left;
         transition: box-shadow .1s ease-in-out;
-        &:hover {
-            box-shadow: 0 8px 20px -5px $main-color-shadow;
-        }
+        // &:hover {
+        //     box-shadow: 0 8px 20px -5px $main-color-shadow;
+        // }
     }
     // aside {
     //     flex: 1;
     //     padding: 4vw 0;
     // }
     .content {
-        position: absolute;
-        left: 0;
-        top: 0;
+        // position: absolute;
+        // left: 0;
+        // top: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(0,0,0,.6);
-        background-image: $main-color-gradient-transparent;
+        background: #fff;
+        // background-color: rgba(255,255,255,.9);
+        // background-image: $main-color-gradient-transparent;
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
         padding: 4% 5%;
+        border-radius: 5px;
+        transition: border-radius .1s ease-in-out;
+        &:hover {
+            border-bottom-right-radius: 20px;
+        }
 
     }
     .feature-img {
@@ -144,9 +155,10 @@ input {
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        color: #fff;
+        color: #333;
+        // color: #fff;
         &:hover {
-            color: $second-color;
+            color: $main-color;
         }
     }
     a {
@@ -177,7 +189,7 @@ input {
                 margin-right: 0;
             }
             &:hover {
-                color: $second-color;
+                color: $main-color;
             }
         }
     }
@@ -300,7 +312,7 @@ input {
         content: '';
         position: absolute;
         width: 50px;
-        height: 2px;
+        height: 1px;
         bottom: 0;
         left: 50%;
         transform: translateX(-50%);

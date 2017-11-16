@@ -15,7 +15,7 @@ export default class Articles extends Component {
         const articles = [1,2,3,4,5,6].map(key => {
             return (
                 <article key={key}>
-                    <img src="https://placeimg.com/640/200/any" className="feature-img"/>
+                    {/* <img src="https://placeimg.com/640/200/any" className="feature-img"/> */}
                     <section className="content">
                         <Link to={`/post/${key}`}>
                             <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, laborum.</h2>
